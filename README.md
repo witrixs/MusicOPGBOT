@@ -13,7 +13,7 @@
 
 >Установка
 ```sh
-git clone https://github.com/eritislami/MusicOPGBOT.git
+git clone https://github.com/witrixs/MusicOPGBOT.git
 cd MusicOPGBOT
 yarn install
 ```
