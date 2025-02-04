@@ -4,6 +4,7 @@ require('dotenv').config()
 // Импортирует классы Player (для работы с музыкой) и Client, GatewayIntentBits из discord.js
 const { Player } = require('discord-player');
 const { Client, GatewayIntentBits } = require('discord.js');
+const { YoutubeiExtractor } = require('discord-player-youtubei');
 
 // Создает глобальный клиент Discord с нужными намерениями (intents)
 global.client = new Client({
@@ -22,7 +23,7 @@ client.config = require('./config');
 
 // Создает новый объект Player для музыкального функционала, используя клиент и опции из конфигурации
 const player = new Player(client, client.config.opt.discordPlayer);
-player.extractors.loadDefault(); // Загружает стандартные экстракторы для работы с музыкальными сервисами
+player.extractors.register(YoutubeiExtractor, {}); // Загружает стандартные экстракторы для работы с музыкальными сервисами
 
 // Очищает консоль (для удобства работы с логами)
 console.clear()
